@@ -1,0 +1,6 @@
+Id,AccountId,Name,SerialNumber
+0,0,testAsset,test12Test
+1,0,testAsset,test123Test
+2,0,testAsset,test123 4Test
+3,0,testAsset,test123 Test45
+4,0,testAsset,1test23 Test456
