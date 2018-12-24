@@ -1,3 +1,19 @@
-<aura:component>
+<aura:component controller="GithubUserController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader">
+  <aura:attribute name="userName" type="String" />
 
-</aura:component>	
+  <div class="row">
+    <lightning:input aura:id="userName" label="Name" name="newUserName" value="{!v.userName}" />
+  </div>
+
+  <div class="slds-spinner_container slds-hide" aura:id="spinner">
+    <div class="slds-spinner_brand slds-spinner slds-spinner_medium" aria-hidden="true" role="alert">
+      <div class="slds-spinner__dot-a"></div>
+      <div class="slds-spinner__dot-b"></div>
+    </div>
+  </div>
+
+  <footer class="slds-modal__footer">
+    <lightning:button label="Create" variant="brand" onclick="{!c.doCreateAction}" />
+    <lightning:button label="Cancel" onclick="{!c.doCancelAction}" />
+  </footer>
+</aura:component>
