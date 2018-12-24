@@ -19,6 +19,10 @@
     <layoutAssignments>
         <layout>GithubUser__c-GithubUser Layout</layout>
     </layoutAssignments>
+    <tabVisibilities>
+        <tab>GithubUser__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <userLicense>High Volume Customer Portal</userLicense>
     <userPermissions>
         <enabled>true</enabled>
