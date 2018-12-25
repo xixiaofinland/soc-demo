@@ -5,11 +5,11 @@
     var spinner = cmp.find("spinner");
     $A.util.removeClass(spinner, "slds-hide");
 
-    var action = cmp.get("c.createNewUser");
-    var userName = cmp.get("v.userName");
-    console.log('userName: ' + userName);
+    var action = cmp.get("c.createGithubUser");
+    var userId = cmp.get("v.userId");
+    console.log('userId: ' + userId);
 
-    action.setParams({ "newUserName" : userName });
+    action.setParams({ "newUserId" : userId });
     action.setCallback(this, function(response) {
       console.log("callback here.");
       var state = response.getState();

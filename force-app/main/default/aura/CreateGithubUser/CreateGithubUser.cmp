@@ -1,8 +1,8 @@
 <aura:component controller="GithubUserController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader">
-  <aura:attribute name="userName" type="String" />
+  <aura:attribute name="userId" type="String" />
 
   <div class="row">
-    <lightning:input aura:id="userName" label="Name" name="newUserName" value="{!v.userName}" />
+    <lightning:input aura:id="userId" label="Github Id" name="newUserId" value="{!v.userId}" />
   </div>
 
   <div class="slds-spinner_container slds-hide" aura:id="spinner">
