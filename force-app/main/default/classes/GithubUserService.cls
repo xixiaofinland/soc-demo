@@ -14,9 +14,5 @@ public with sharing class GithubUserService {
     }
   }
 
-  private static Boolean doesExist(JSONParser.UserProfile userProfile){
-    return userProfile.message == null;
-  }
-
   public class GithubUserServiceException extends Exception {}
 }

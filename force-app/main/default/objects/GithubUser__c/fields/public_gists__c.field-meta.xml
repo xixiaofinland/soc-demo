@@ -3,9 +3,10 @@
     <fullName>public_gists__c</fullName>
     <externalId>false</externalId>
     <label>public_gists</label>
-    <length>18</length>
+    <precision>4</precision>
     <required>false</required>
+    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
+    <type>Number</type>
     <unique>false</unique>
 </CustomField>

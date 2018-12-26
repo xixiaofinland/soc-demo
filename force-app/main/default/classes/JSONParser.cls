@@ -5,9 +5,9 @@ public with sharing class JSONParser {
 
   public class UserProfile {
     public String login;
-    public String url;
-    public String public_repos;
-    public String public_gists;
+    public String html_url;
+    public Integer public_repos;
+    public Integer public_gists;
   }
 
   public class JSONParserException extends Exception {}

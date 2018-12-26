@@ -32,17 +32,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>GithubUser__c.html_url__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>GithubUser__c.public_gists__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>GithubUser__c.public_repos__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>GithubUser__c.url__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

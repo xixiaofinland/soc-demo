@@ -12,10 +12,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>url__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>public_repos__c</field>
             </layoutItems>
             <layoutItems>
@@ -25,6 +21,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Github_User_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>html_url__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
