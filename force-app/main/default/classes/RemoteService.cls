@@ -1,13 +1,14 @@
 public with sharing class RemoteService {
-  public String getUserData(String remoteUserId) {
-    HttpResponse response = doHTTPRequest('GET', remoteURL);
+  public static String getUserData(String remoteUserId) {
+    String remoteURLInNamedCredentials = 'callout:Github_REST_API/users/' + remoteUserId;
+    HttpResponse response = doHTTPRequest('GET', remoteURLInNamedCredentials);
     if(response.getStatusCode() != 200){
       throw new RemoteServiceException('remote service returned status code other than 200.');
     }
     return response.getBody();
   }
 
-  private HttpResponse doHTTPRequest(String action, String remoteURL){
+  private static HttpResponse doHTTPRequest(String action, String remoteURL){
     Http http = new Http();
     HttpRequest request = new HttpRequest();
     request.setMethod(action);

@@ -11,7 +11,6 @@
 
     action.setParams({ "newUserId" : userId });
     action.setCallback(this, function(response) {
-      console.log("callback here.");
       var state = response.getState();
       if (state === "SUCCESS") {
         $A.get('e.force:refreshView').fire();
