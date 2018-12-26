@@ -4,7 +4,11 @@ public with sharing class GithubUsers {
     for(JSONParser.UserProfile userProfile : userProfiles){
       githhubUsersToInsert.add(createGithubUser(userProfile));
     }
-    insert githhubUsersToInsert;
+    try{
+        insert githhubUsersToInsert;
+    } catch (DmlException e){
+        throw new GithubUserException('create record failed.');
+    }
 
     List<Id> ids = new List<Id>();
     for(GithubUser__c u : githhubUsersToInsert){
@@ -14,12 +18,12 @@ public with sharing class GithubUsers {
   }
 
   private static GithubUser__c createGithubUser(JSONParser.UserProfile userProfile){
-    System.Debug('>>>> ' + userProfile);
     return new GithubUser__c(Name = userProfile.login,
                             Github_User_Id__c = userProfile.login,
                             html_url__c = userProfile.html_url,
                             public_repos__c = userProfile.public_repos,
-                            public_gists__c = userProfile.public_gists
-                            );
+                            public_gists__c = userProfile.public_gists);
   }
+
+  public class GithubUserException extends Exception {}
 }

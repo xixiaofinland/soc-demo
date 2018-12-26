@@ -4,6 +4,7 @@ public with sharing class GithubUserService {
       List<JSONParser.UserProfile> userProfiles = new List<JSONParser.UserProfile>();
 
       for(String userId : userIds){
+        //Github REST API is not bulkified, be careful and do not flood their interface here;
         String remoteServiceResponse = RemoteService.getUserData(userId);
         userProfiles.add(JSONParser.parseUserData(remoteServiceResponse));
       }
