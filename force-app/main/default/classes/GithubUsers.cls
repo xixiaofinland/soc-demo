@@ -17,7 +17,7 @@ public with sharing class GithubUsers {
     System.Debug('>>>> ' + userProfile);
     return new GithubUser__c(Name = userProfile.login,
                             Github_User_Id__c = userProfile.login,
-                            // html_url__c = userProfile.html_url,
+                            html_url__c = userProfile.html_url,
                             public_repos__c = userProfile.public_repos,
                             public_gists__c = userProfile.public_gists
                             );
