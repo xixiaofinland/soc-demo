@@ -4,7 +4,6 @@ public with sharing class JSONParser {
   }
 
   public class UserProfile {
-    public String message;
     public String login;
     public String url;
     public String public_repos;

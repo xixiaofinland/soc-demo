@@ -3,7 +3,7 @@ public with sharing class RemoteService {
     String remoteURLInNamedCredentials = 'callout:Github_REST_API/users/' + remoteUserId;
     HttpResponse response = doHTTPRequest('GET', remoteURLInNamedCredentials);
     if(response.getStatusCode() != 200){
-      throw new RemoteServiceException('remote service returned status code other than 200.');
+      throw new RemoteServiceException('remote service returned status code: ' + response.getStatusCode());
     }
     return response.getBody();
   }

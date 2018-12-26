@@ -18,6 +18,7 @@ public with sharing class GithubUsers {
                             Github_User_Id__c = userProfile.login,
                             url__c = userProfile.url,
                             public_repos__c = userProfile.public_repos,
-                            public_gists__c = userProfile.public_gists);
+                            public_gists__c = userProfile.public_gists
+                            );
   }
 }

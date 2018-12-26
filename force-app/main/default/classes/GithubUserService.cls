@@ -5,19 +5,12 @@ public with sharing class GithubUserService {
 
       for(String userId : userIds){
         String remoteServiceResponse = RemoteService.getUserData(userId);
-        JSONParser.UserProfile userProfile = JSONParser.parseUserData(remoteServiceResponse);
-        if(doesExist(userProfile)){
-          userProfiles.add(userProfile);
-        }else {
-          throw new GithubUserServiceException(userId + ' does not exist in Github.');
-        }
+        userProfiles.add(JSONParser.parseUserData(remoteServiceResponse));
       }
 
-      List<Id> newGithubUserRecordIds = GithubUsers.createRecords(userProfiles);
-      return newGithubUserRecordIds;
+      return GithubUsers.createRecords(userProfiles);
     }catch (Exception e){
-      System.Debug('Exception: ' + e.getTypeName() + ': \n' + e.getMessage());
-      throw new GithubUserServiceException('Create GithubUser action failed.');
+      throw new GithubUserServiceException(e.getMessage());
     }
   }
 

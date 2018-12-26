@@ -7,7 +7,6 @@
 
     var action = cmp.get("c.createGithubUser");
     var userId = cmp.get("v.userId");
-    console.log('userId: ' + userId);
 
     action.setParams({ "newUserId" : userId });
     action.setCallback(this, function(response) {
@@ -24,8 +23,6 @@
         console.error(message);
       }
       $A.util.addClass(spinner, "slds-hide");
-      $A.get("e.force:closeQuickAction").fire();
-      cmp.destroy();
     });
     $A.enqueueAction(action);
   },
