@@ -15,6 +15,7 @@ public with sharing class GithubUsers {
 
   private static GithubUser__c createGithubUser(JSONParser.UserProfile userProfile){
     return new GithubUser__c(Name = userProfile.login,
+                            Github_User_Id__c = userProfile.login,
                             url__c = userProfile.url,
                             public_repos__c = userProfile.public_repos,
                             public_gists__c = userProfile.public_gists);

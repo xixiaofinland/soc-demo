@@ -22,6 +22,10 @@
                 <behavior>Edit</behavior>
                 <field>public_gists__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Github_User_Id__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
