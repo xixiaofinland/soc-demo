@@ -11,11 +11,6 @@
         <field>GithubUser__c.public_repos__c</field>
         <readable>false</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>GithubUser__c.url__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
     <layoutAssignments>
         <layout>GithubUser__c-GithubUser Layout</layout>
     </layoutAssignments>
