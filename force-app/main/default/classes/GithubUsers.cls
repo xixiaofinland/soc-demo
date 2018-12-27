@@ -1,5 +1,5 @@
 public with sharing class GithubUsers {
-  public static List<Id> createRecords(List<JSONParser.UserProfile> userProfiles){ 
+  public static List<Id> createRecords(List<JSONParser.UserProfile> userProfiles){
     List<GithubUser__c> githhubUsersToInsert = new List<GithubUser__c>();
     for(JSONParser.UserProfile userProfile : userProfiles){
       githhubUsersToInsert.add(createGithubUser(userProfile));
@@ -7,7 +7,7 @@ public with sharing class GithubUsers {
     try{
         insert githhubUsersToInsert;
     } catch (DmlException e){
-        throw new GithubUserException('create record failed.');
+      throw new GithubUserException('create record failed.');
     }
 
     List<Id> ids = new List<Id>();
