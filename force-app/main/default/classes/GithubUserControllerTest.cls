@@ -38,12 +38,14 @@ public with sharing class GithubUserControllerTest {
   public static void whenRemoteNonExistThenCreateUserFail(){
     Test.setMock(HttpCalloutMock.class, new Mock404Response());
     Boolean didThrowException = false;
+    String exceptionMessage;
 
     Test.startTest();
     try{
       GithubUserController.createGithubUser('aGithubUserId');
     } catch (AuraHandledException e){
       didThrowException = true;
+      exceptionMessage = e.getMessage();
     }
     Test.stopTest();
 
@@ -51,6 +53,8 @@ public with sharing class GithubUserControllerTest {
 
     System.assertEquals(0, githubUsers.size(), 'No githubUser record should be created.');
     System.assertEquals(true, didThrowException, 'AuraHandledException should be thrown');
+    System.assertEquals('Something went wrong: remote service returned status code: 404',
+                    exceptionMessage, 'message thrown from RemoteServiceException in RemoteService class should be present.');
   }
 
   private class Mock404Response implements HttpCalloutMock {
@@ -65,22 +69,31 @@ public with sharing class GithubUserControllerTest {
 
   @isTest
   public static void whenLocalAlreadyExistThenCreateUserFail(){
+    Test.setMock(HttpCalloutMock.class, new MockUserXixiao007SuccessResponse());
     String userName = 'xixiao007';
-    GithubUser__c githubUser = new GithubUser__c(Name = userName, Github_User_Id__c = userName);
-    insert githubUser;
+    createGithubUserRecord(userName);
     Boolean didThrowException = false;
+    String exceptionMessage;
 
     Test.startTest();
     try{
       GithubUserController.createGithubUser(userName);
     } catch (AuraHandledException e){
       didThrowException = true;
+      exceptionMessage = e.getMessage();
     }
     Test.stopTest();
 
     List<GithubUser__c> githubUsers = GithubUsersSelector.getAll();
 
     System.assertEquals(1, githubUsers.size(), 'No more githubUser record should be created after startTest.');
-    System.assertEquals(true, didThrowException, 'AuraHandledException should be thrown');
+    System.assertEquals(true, didThrowException, 'AuraHandledException should be thrown.');
+    System.assertEquals('Something went wrong: create record failed.', exceptionMessage,
+                'message thrown from DMLException in GithubUsers class should be present.');
+  }
+
+  private static void createGithubUserRecord(String userName){
+    GithubUser__c githubUser = new GithubUser__c(Name = userName, Github_User_Id__c = userName);
+    insert githubUser;
   }
 }
