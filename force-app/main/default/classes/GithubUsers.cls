@@ -9,8 +9,7 @@ public with sharing class GithubUsers {
     } catch (DmlException e){
       throw new GithubUsersException('create record failed.');
     }
-
-    return new List<Id>((new Map<Id,SObject>(githhubUsersToInsert)).keySet());
+    return getIdsFromSObjects(githhubUsersToInsert);
   }
 
   private static GithubUser__c createGithubUser(JSONParser.UserProfile userProfile){
@@ -19,6 +18,10 @@ public with sharing class GithubUsers {
                             html_url__c = userProfile.html_url,
                             public_repos__c = userProfile.public_repos,
                             public_gists__c = userProfile.public_gists);
+  }
+
+  private static List<Id> getIdsFromSObjects(List<SObject> sObjects){
+    return new List<Id>((new Map<Id,SObject>(sObjects)).keySet());
   }
 
   public class GithubUsersException extends Exception {}
