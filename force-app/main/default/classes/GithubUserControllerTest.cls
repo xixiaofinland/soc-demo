@@ -1,7 +1,7 @@
 @isTest
 public with sharing class GithubUserControllerTest {
   @isTest
-  public static void whenRemoteExistAndLocalNonExistThenCreateUser(){
+  public static void whenRemoteExistAndLocalNoneExistThenCreateUser(){
     Test.setMock(HttpCalloutMock.class, new MockUserXixiao007SuccessResponse());
 
     Test.startTest();
@@ -35,7 +35,7 @@ public with sharing class GithubUserControllerTest {
   }
 
   @isTest
-  public static void whenRemoteNonExistThenCreateUserFail(){
+  public static void whenRemoteNoneExistThenCreateUserFail(){
     Test.setMock(HttpCalloutMock.class, new Mock404Response());
     Boolean didThrowException = false;
     String exceptionMessage;
