@@ -1,7 +1,7 @@
-# Separation of Concerns in Helsinki Salesforce Developer Community
+# Purpose
 
-This is the demo code used in my presentation.
+This is the demo code used in my Separation of Concerns Principle presentation in Helsinki Salesforce Developer Community in Jan. 2019.
 
 ## Presentation video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Yh-h-5Ck08g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![SoC](https://img.youtube.com/vi/Yh-h-5Ck08g/0.jpg)](https://www.youtube.com/watch?v=Yh-h-5Ck08g)
