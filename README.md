@@ -1,14 +1,7 @@
-# SFDX  App
+# Separation of Concerns in Helsinki Salesforce Developer Community
 
-## Dev, Build and Test
+This is the demo code used in my presentation.
 
+## Presentation video
 
-## Resources
-
-
-## Description of Files and Directories
-
-
-## Issues
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Yh-h-5Ck08g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
